@@ -89,14 +89,13 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   buttonContainer: {
-    flex: 1,
-    flexDirection: 'row',
+
     backgroundColor: 'transparent',
     margin: 64,
   },
   button: {
     flex: 1,
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     alignItems: 'center',
   },
   text: {

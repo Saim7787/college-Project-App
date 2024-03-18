@@ -14,7 +14,6 @@ const App = () => {
     'Jost-SemiBold': require('./assets/Fonts/Jost-SemiBold.ttf'),
     'Mulish-Bold': require('./assets/Fonts/Mulish-Bold.ttf'),
     'Aubrey-Regular': require('./assets/Fonts/Aubrey-Regular.ttf'),
-
     'Poppins-SemiBold': require('./assets/Fonts/Poppins-SemiBold.ttf'),
 
     
