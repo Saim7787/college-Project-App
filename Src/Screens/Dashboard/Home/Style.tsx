@@ -7,12 +7,10 @@ import { BORDERRADIUS } from "../../../Theme/BorderRadius";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
- 
-  },
-  body:{
     paddingHorizontal: SPACING.space_24,
-    paddingVertical:SPACING.space_20
+    paddingVertical:SPACING.space_30
   },
+ 
   touch:{
     flexDirection:'row',
     justifyContent:'center',
@@ -86,6 +84,25 @@ export const styles = StyleSheet.create({
       fontSize: FONTSIZE.size_13,
 
       fontFamily: FONTFAMILY.Mulish_Bold,
+  },
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
   },
 
 })

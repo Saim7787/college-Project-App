@@ -6,7 +6,7 @@ import { ThemeContext } from '../../Theme/ThemeContext';
 
 import Profile from '../../Screens/Dashboard/Profile/Index';
 import News from '../../Screens/Dashboard/News/Index';
-import MyCourse from '../../Screens/Dashboard/Home/Index';
+import { Home } from '../../Screens';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,11 +32,11 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
   };
   const getTabBarIcon = (route, focused, label) => {
     let icon;
-    if (route.name === 'CMS') {
+  
       icon = themeContext?.isDarkTheme
         ? require('../../Assets/Dashboard/Navigator/darkhome.png')
         : require('../../Assets/Dashboard/Navigator/dashboard.png');
-    } else if (route.name === 'Profile') {
+     if (route.name === 'Profile') {
       icon = themeContext?.isDarkTheme
       ? require('../../Assets/Dashboard/Navigator/darkuser.png')
       : require('../../Assets/Dashboard/Navigator/iconamoon_profile-light.png');
@@ -125,8 +125,8 @@ const Navigator = () => {
   return (
     <Tab.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
      
+      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-      <Tab.Screen name="Home" component={MyCourse} options={{ headerShown: false }} />
       <Tab.Screen name="News" component={News} options={{ headerShown: false }} />
     </Tab.Navigator>
   );

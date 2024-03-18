@@ -49,7 +49,7 @@ const Slider = ({ navigation }) => {
 
   const checkOnboardingStatus = async () => {
     try {
-      const onboardingStatus = await AsyncStorage.getItem('@onboardingStatus');
+      const onboardingStatus = await AsyncStorage.getItem('@onboarding');
       if (onboardingStatus !== null && onboardingStatus === 'shown') {
         // Onboarding screen has already been shown, navigate to the main screen or any other screen
 
@@ -71,7 +71,7 @@ const Slider = ({ navigation }) => {
 
   const setOnboardingStatus = async () => {
     try {
-      await AsyncStorage.setItem('@onboardingStatus', 'shown');
+      await AsyncStorage.setItem('@onboarding', 'shown');
     } catch (error) {
       console.error('Error setting onboarding status:', error);
     }

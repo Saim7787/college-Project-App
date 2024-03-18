@@ -1,30 +1,17 @@
 
 export {default as Slider} from './OnBoarding/Slider/Slider'
-export {default as Home} from './Dashboard/CMS/Home'
+
 export {default as Register} from './Auth/Register/Index'
 export {default as Login} from './Auth/Login/Index'
-export {default as FillProfile} from './Dashboard/More/FillProfile/Index'
+
 export {default as ForgotPassword} from './Auth/ForgotPassword/Index'
 export {default as VerifyPassword} from './Auth/ForgotPassword/VerifyPassword'
 export {default as NewPassword} from './Auth/ForgotPassword/Create_New_Password'
-export {default as NewsDetails} from './Dashboard/News/NewsDetails'
-export {default as SchoolDetails} from './Dashboard/Home/SchoolDetails'
-export {default as ProgramDetails} from './Dashboard/Home/ProgramDetails/ProgramDetails'
-export {default as AboutUs} from './Dashboard/More/About Us/Index'
-export {default as OfferedProgram} from './Dashboard/More/OfferedProgram/Index'
-export {default as ProgramsDetails} from './Dashboard/More/OfferedProgram/ProgramsDetails'
-export {default as OurContact} from './Dashboard/More/Our Contact/Index'
-export {default as FeeCalculator} from './Dashboard/More/Fee Calculator/Index'
-export {default as GuidanceHelp} from './Dashboard/More/Guidance & Help/Index'
-export {default as SchemeStudy} from './Dashboard/CMS/SchemeOfStudy/Index'
-export {default as SuggestionBox} from './Dashboard/CMS/Suggestion Box/Index'
-export {default as AccountBook} from './Dashboard/CMS/Account Book/Index'
-export {default as GradeBook} from './Dashboard/CMS/GradeBook/Index'
-export {default as MyCourse} from './Dashboard/CMS/My Course/Index'
-export {default as LectureSchedule} from './Dashboard/CMS/Lecture Schedule/Index'
-export {default as DateSheet} from './Dashboard/CMS/DateSheet/Index'
-export {default as EditProfile} from './Dashboard/More/FillProfile/Index'
-export {default as Notification} from './Dashboard/CMS/Notification/Index'
-export {default as NotificationDetails} from './Dashboard/CMS/Notification/Notification Details/Index'
+
+
+export { default as Home} from './Dashboard/Home/Index'
+
+
+
 
 

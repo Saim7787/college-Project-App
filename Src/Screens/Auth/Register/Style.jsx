@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 25,
   },
   header: {
-    marginTop: 30,
+    marginTop: 70,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -47,11 +47,12 @@ export const styles = StyleSheet.create({
   input_container: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 5,
+    gap: 10,
     width: '100%',
+  
     borderRadius: BORDERRADIUS.radius_12,
     paddingHorizontal: SPACING.space_18,
-    paddingVertical: SPACING.space_4,
+    paddingVertical: SPACING.space_12,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
