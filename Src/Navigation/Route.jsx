@@ -8,25 +8,34 @@ import Navigator from './Tab Navigation/Navigator';
 
 import { useSelector } from 'react-redux';
 const Route  = () => {
-  const data = useSelector((state) => state.token.token);
-  const [token, setToken] = useState('');
+  // const data = useSelector((state) => state.token.token);
+  // const [token, setToken] = useState('');
   const Stack = createNativeStackNavigator();
 
-  console.log('token',token)
-  console.log('data',data)
-  useEffect(() => {
-    fetchData();
-    // Fetch data when the component mounts
-  }, []);
+  // console.log('token',token)
+  // console.log('data',data)
+  // useEffect(() => {
+  //   fetchData();
+  //   // Fetch data when the component mounts
+  // }, []);
 
-  const fetchData = async () => {
-    const fetchedToken = await getData();
-    setToken(fetchedToken);
-  };
+  // const fetchData = async () => {
+  //   const fetchedToken = await getData();
+  //   setToken(fetchedToken);
+  // };
   return (
     <NavigationContainer>
-       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'slider'}>
-    {token ? (
+       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Slider'}>
+
+       <Stack.Screen name={'Navigator'} component={Navigator} /> 
+       <Stack.Screen name={navgiationStrings.Login} component={Login} />
+      <Stack.Screen name={navgiationStrings.Slider} component={Slider} />
+      <Stack.Screen name={navgiationStrings.Register} component={Register} />
+
+      <Stack.Screen name={navgiationStrings.ForgotPassword} component={ForgotPassword} />
+    <Stack.Screen name={navgiationStrings.VerifyPassword} component={VerifyPassword} />
+      <Stack.Screen name={navgiationStrings.NewPassword} component={NewPassword} />
+    {/* {token ? (
 
     <Stack.Group>   
   <Stack.Screen name={'Navigator'} component={Navigator} /> 
@@ -44,7 +53,7 @@ const Route  = () => {
     <Stack.Screen name={navgiationStrings.VerifyPassword} component={VerifyPassword} />
       <Stack.Screen name={navgiationStrings.NewPassword} component={NewPassword} />
       </Stack.Group>
-      )}
+      )} */}
       </Stack.Navigator>
 </NavigationContainer>
   )

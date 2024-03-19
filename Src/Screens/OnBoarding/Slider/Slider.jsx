@@ -28,54 +28,14 @@ const slides = [
 
 const Slider = ({ navigation }) => {
   const themeContext = useContext(ThemeContext);
-  const theme = themeContext?.isDarkTheme ? darkTheme : lightTheme;
-  const appIntroSliderRef = React.useRef<AppIntroSlider>(null);
+  const appIntroSliderRef = React.useRef();
+
   const [token, setToken] = useState('');
+  const theme = themeContext?.isDarkTheme ? darkTheme : lightTheme;
 
 
-  useEffect(() => {
-    fetchData();
-    // Fetch data when the component mounts
-  }, []);
 
-  const fetchData = async () => {
-    const fetchedToken = await getData();
-    setToken(fetchedToken);
-  };
 
-  useEffect(() => {
-    checkOnboardingStatus();
-  }, []);
-
-  const checkOnboardingStatus = async () => {
-    try {
-      const onboardingStatus = await AsyncStorage.getItem('@onboarding');
-      if (onboardingStatus !== null && onboardingStatus === 'shown') {
-        // Onboarding screen has already been shown, navigate to the main screen or any other screen
-
-        if(token)
-        {
-
-          navigation.navigate('Navigator');
-        }
-        else
-        {
-          navigation.navigate('Login');
-
-        }
-      }
-    } catch (error) {
-      console.error('Error checking onboarding status:', error);
-    }
-  };
-
-  const setOnboardingStatus = async () => {
-    try {
-      await AsyncStorage.setItem('@onboarding', 'shown');
-    } catch (error) {
-      console.error('Error setting onboarding status:', error);
-    }
-  };
 
   const renderItem = ({ item, index }) => {
     const isLast = index === slides.length - 1;
@@ -83,7 +43,7 @@ const Slider = ({ navigation }) => {
     return (
       <View style={[styles.container, { backgroundColor: theme.primaryBackground }]}>
         <TouchableOpacity onPress={() => {appIntroSliderRef.current?.goToSlide(slides.length - 1)
-          setOnboardingStatus();
+          // setOnboardingStatus();
         }}>
           <Text style={[styles.skip_text, { color: theme.primaryText }]}>Skip</Text>
         </TouchableOpacity>
@@ -94,7 +54,7 @@ const Slider = ({ navigation }) => {
         {isLast && (
         
         
-        <TouchableOpacity style={styles.Button} onPress={setOnboardingStatus} activeOpacity={0.4}>
+        <TouchableOpacity style={styles.Button}  activeOpacity={0.4} onPress={()=> navigation.navigate('Login')}>
 <Text style={styles.button_text}>
   Get Started
 </Text>
@@ -110,8 +70,8 @@ const Slider = ({ navigation }) => {
 
   const renderDoneButton = ({ }) => (
     <TouchableOpacity onPress={() => {
-      setOnboardingStatus(); // Set onboarding status to 'shown'
-      navigation.navigate('Main');
+   
+      navigation.navigate('Login');
     }}>
       <Text style={styles.buttonText}>Get Started</Text>
     </TouchableOpacity>

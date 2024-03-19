@@ -138,7 +138,7 @@ const Index = ({navigation}) => {
 
   iconStyle={{ borderColor: "#50B748" }}
   innerIconStyle={{ borderWidth: 2 }}
-  textStyle={{ fontFamily: "JosefinSans-Regular" }}
+  textStyle={{ fontFamily: "Aubrey_Regular" }}
   onPress={(isChecked) => {}}
 />
 <Text style={[styles.Policy_text, { color: theme.PrimarylightText }]}>Agree to Terms & Conditions</Text>

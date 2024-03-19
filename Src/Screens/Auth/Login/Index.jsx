@@ -30,15 +30,15 @@ const dispatch = useDispatch()
       initialValues={{ email: '', password: '' }}
       validationSchema={validationSchema}
       onSubmit={(values,{resetForm}) => {
-        storeData(dummyToken)
-        dispatch(setUserToken({token:dummyToken}))
-       Toast.show({
-         type: 'success',
-         text1: 'User login successfully'
-       });
+      //   storeData(dummyToken)
+      //   dispatch(setUserToken({token:dummyToken}))
+      //  Toast.show({
+      //    type: 'success',
+      //    text1: 'User login successfully'
+      //  });
        
-
-          resetForm() 
+      resetForm() 
+       navigation.navigate('Navigator')
       
       }}
     >
@@ -116,7 +116,7 @@ const dispatch = useDispatch()
 
   iconStyle={{ borderColor: "#167F71" }}
   innerIconStyle={{ borderWidth: 2,borderRadius:3 }}
-  textStyle={{ fontFamily: "JosefinSans-Regular" }}
+  textStyle={{ fontFamily: "Aubrey_Regular" }}
   onPress={(isChecked) => {}}
 />
 <Text style={[styles.Policy_text, { color: theme.PrimarylightText }]}>Remember Me</Text>
