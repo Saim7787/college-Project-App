@@ -27,7 +27,7 @@ const Index = () => {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setPermission(status === 'granted');
     })();
   }, []);
@@ -54,7 +54,7 @@ const Index = () => {
     return (
       <View style={styles.container}>
         <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
-        <Button onPress={Camera.requestPermissionsAsync} title="Grant Permission" />
+        <Button onPress={Camera.requestCameraPermissionsAsync} title="Grant Permission" />
       </View>
     );
   }
@@ -71,10 +71,7 @@ const Index = () => {
       <Text style={styles.paragraph}>{text}</Text>
       <View style={styles.cameraContainer}>
         <Camera ref={cameraRef} style={styles.camera} type={type}>
-        
-        </Camera>
-      </View>
-      <View style={styles.buttonContainer}>
+        <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
               <Text style={styles.text}>Flip Camera</Text>
             </TouchableOpacity>
@@ -82,6 +79,9 @@ const Index = () => {
               <Text style={styles.text}>Take Picture</Text>
             </TouchableOpacity>
           </View>
+        </Camera>
+      </View>
+     
 
       {capturedImage && (
         <View style={styles.imageContainer}>

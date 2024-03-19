@@ -40,11 +40,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
       icon = themeContext?.isDarkTheme
       ? require('../../Assets/Dashboard/Navigator/darkuser.png')
       : require('../../Assets/Dashboard/Navigator/iconamoon_profile-light.png');
-    } else if (route.name === 'News') {
-      icon = themeContext?.isDarkTheme
-        ? require('../../Assets/Dashboard/Navigator/darkinsight.png')
-        : require('../../Assets/Dashboard/Navigator/news.png');
-    } else if (route.name === 'Home') {
+    }  else if (route.name === 'Home') {
       icon = themeContext?.isDarkTheme
         ? require('../../Assets/Dashboard/Navigator/darkuser.png')
         : require('../../Assets/Dashboard/Navigator/home.png');
@@ -62,7 +58,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
             fontSize: 12,
             fontWeight: '400',
             letterSpacing: 0.12,
-            fontFamily: 'AtkinsonHyperlegible-Regular',
+            fontFamily: 'Aubrey-Regular',
             marginTop: 8,
           }}
         >
@@ -127,7 +123,7 @@ const Navigator = () => {
      
       <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-      <Tab.Screen name="News" component={News} options={{ headerShown: false }} />
+     
     </Tab.Navigator>
   );
 };
