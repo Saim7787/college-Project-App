@@ -7,6 +7,7 @@ import {  ForgotPassword, Login, NewPassword, Register, Slider, VerifyPassword, 
 import Navigator from './Tab Navigation/Navigator';
 
 import { useSelector } from 'react-redux';
+import AdminNavigator from './Tab Navigation/AdminNavigator';
 const Route  = () => {
   // const data = useSelector((state) => state.token.token);
   // const [token, setToken] = useState('');
@@ -25,9 +26,11 @@ const Route  = () => {
   // };
   return (
     <NavigationContainer>
-       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Slider'}>
+       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'AdminNavigator'}>
 
        <Stack.Screen name={'Navigator'} component={Navigator} /> 
+       <Stack.Screen name={'AdminNavigator'} component={AdminNavigator} /> 
+
        <Stack.Screen name={navgiationStrings.Login} component={Login} />
       <Stack.Screen name={navgiationStrings.Slider} component={Slider} />
       <Stack.Screen name={navgiationStrings.Register} component={Register} />
@@ -35,6 +38,9 @@ const Route  = () => {
       <Stack.Screen name={navgiationStrings.ForgotPassword} component={ForgotPassword} />
     <Stack.Screen name={navgiationStrings.VerifyPassword} component={VerifyPassword} />
       <Stack.Screen name={navgiationStrings.NewPassword} component={NewPassword} />
+
+
+
     {/* {token ? (
 
     <Stack.Group>   

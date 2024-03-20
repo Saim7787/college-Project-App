@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, Pressable, ScrollView } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { styles } from '../Register/Style'
 import { ThemeContext } from '../../../Theme/ThemeContext'
@@ -10,6 +10,7 @@ import { getData, storeData } from '../../../Utility/Storage/Storage'
 import { useDispatch } from 'react-redux'
 import { setUserToken } from '../../../Features/Token'
 import Toast from 'react-native-toast-message'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
@@ -38,12 +39,11 @@ const dispatch = useDispatch()
       //  });
        
       resetForm() 
-       navigation.navigate('Navigator')
       
       }}
     >
       {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
-        <View style={[styles.container, { backgroundColor: theme.primaryBackground }]}>
+        <ScrollView contentContainerStyle={[styles.container, { backgroundColor: theme.primaryBackground }]}>
           <View style={styles.header}>
             <Image source={require('../../../Assets/Auth/Register/logo.png')} style={styles.logo_image} />
             <View>
@@ -127,7 +127,7 @@ const dispatch = useDispatch()
 </View>
 
 {/* Button */}
-            <TouchableOpacity style={styles.Button} onPress={handleSubmit} activeOpacity={0.4}>
+            <TouchableOpacity style={styles.Button} onPress={()=> navigation.navigate('AdminNavigator') } activeOpacity={0.4}>
 <Text style={styles.button_text}>
     Sign In
 </Text>
@@ -137,19 +137,23 @@ const dispatch = useDispatch()
             </TouchableOpacity>
 
           </View>
-          <View style={styles.sign_link}>
+
+
+          <View style={[styles.sign_link,{marginBottom:hp('35%')}]} >
             <Text style={[styles.already_account,{color:theme.PrimarylightText}]}>Don’t have an Account?</Text>
          
-           <TouchableOpacity onPress={() => navigation.navigate('Register') }>   
+           <TouchableOpacity onPress={() => navigation.navigate('Register') } >   
             <Text style={styles.Sign_in}>SIGN UP</Text>
             </TouchableOpacity>
             </View>
           
+
+
             <Toast
         position='top'
         bottomOffset={20}
       />
-        </View>
+        </ScrollView>
         
       )}
     </Formik>

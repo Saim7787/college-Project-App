@@ -3,6 +3,7 @@ import { FONTFAMILY } from "../../../Theme/FontFamily";
 import { FONTSIZE } from "../../../Theme/FontSize";
 import { SPACING } from "../../../Theme/Spacing";
 import { BORDERRADIUS } from "../../../Theme/BorderRadius";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export const styles = StyleSheet.create({
     container:{
       
@@ -77,7 +78,7 @@ fontFamily:FONTFAMILY.Jost_SemiBold,
       justifyContent:'space-between',
       alignItems:'center',
       position:"absolute",
-      bottom:200,
+      bottom:hp('20%'),
       alignSelf:'center',
       
       borderRadius:BORDERRADIUS.radius_33,

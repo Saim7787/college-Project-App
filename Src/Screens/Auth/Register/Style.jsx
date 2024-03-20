@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 25,
+    paddingBottom:20
   },
   header: {
     marginTop: 70,
